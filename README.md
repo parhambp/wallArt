@@ -1,2 +1,2 @@
 # wallArt
-Fuck Me!
+crazy project

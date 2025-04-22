@@ -1,0 +1,237 @@
+body {
+    background-color: #e8e8e8;
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+/* ||Topbar */
+.topbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px; 
+}
+
+.logo {
+    margin-right: 10px; /* فاصله از سمت راست */
+}
+
+.logo img {
+    width: 120px; /* عرض تصویر */
+    height: 120px; /* ارتفاع تصویر */
+    cursor: pointer;
+    border-radius: 50%; /* گرد کردن تصویر */
+}
+
+.search-wrapper {
+    flex-grow: 1; /* جعبه جستجو فضای باقی‌مانده را پر کند */
+    display: flex;
+    justify-content: center; /* قرار دادن جعبه جستجو در مرکز */
+}
+
+.search-container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: linear-gradient(to right, #5c5c5c, #f5f5f5);
+    padding: 10px;
+    border-radius: 15px;
+    transition: background 0.3s ease;
+}
+  
+  .label {
+    position: absolute;
+    top: 50%;
+    left: 20px;
+    transform: translateY(-50%);
+    color: #999;
+    pointer-events: none;
+    transition: transform 0.3s ease, font-size 0.3s ease, color 0.3s ease,
+      text-shadow 0.3s ease;
+  }
+  
+  .search-input {
+    position: relative;
+    width: 230px;
+    height: 40px;
+    padding: 12px;
+    border: 2px solid #ccc;
+    border-radius: 8px;
+    background: linear-gradient(to right, #d9d9d9, #f8f8f8);
+    font-size: 16px;
+    color: #555;
+    outline: none;
+    transition: box-shadow 0.3s ease, background 0.3s ease, color 0.3s ease,
+      border-color 0.3s ease, transform 0.3s ease;
+    transform-style: preserve-3d;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1), 0 0 5px rgba(0, 0, 0, 0.2) inset; /* Improved box-shadow for a realistic feel */
+  }
+  
+  .search-input:focus,
+  .search-input:not(:placeholder-shown) {
+    border-color: #4caf50;
+    background: linear-gradient(to right, #c2f0c2, #f0f0f0);
+    transform: rotateX(20deg);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1), 0 0 10px rgba(0, 0, 0, 0.2) inset; /* Improved box-shadow on focus */
+  }
+  
+  .search-input:focus + .label,
+  .search-input:not(:placeholder-shown) + .label {
+    transform: translateY(-120%) scale(0.8);
+    font-size: 12px;
+    color: #4caf50;
+    text-shadow: 0 0 5px rgba(76, 175, 80, 0.6);
+  }
+  
+  .search-input:hover {
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1), 0 0 10px rgba(0, 0, 0, 0.2) inset; /* Improved box-shadow on hover */
+    background: linear-gradient(to right, #e6e6e6, #f9f9f9);
+    border-color: #999;
+  }
+  
+  .clear-button {
+    position: absolute;
+    top: 50%;
+    right: 20px;
+    transform: translateY(-50%);
+    color: #999;
+    cursor: pointer;
+    opacity: 0;
+    transition: opacity 0.3s ease, transform 0.3s ease, color 0.3s ease;
+  }
+  
+  .clear-button:hover {
+    color: #4caf50;
+    transform: scale(1.1);
+  }
+  
+  .search-input:not(:focus):not(:placeholder-shown) + .clear-button {
+    opacity: 1;
+  }
+  
+  .shine {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+      to bottom right,
+      rgba(255, 255, 255, 0.6),
+      transparent
+    );
+    border-radius: 8px;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+  
+  .search-input:focus + .shine {
+    opacity: 1;
+  }
+  
+  .search-icon {
+    position: absolute;
+    top: 50%;
+    right: 20px;
+    transform: translateY(-50%);
+    color: #999;
+    cursor: pointer;
+    transition: color 0.3s ease, transform 0.3s ease, filter 0.3s ease;
+    border-radius: 50%;
+  }
+  
+  .search-input:focus + .search-icon {
+    color: #4caf50;
+    transform: translateY(-50%) scale(1.1);
+    filter: drop-shadow(0 0 5px rgba(76, 175, 80, 0.6));
+  }
+  
+  @keyframes inputPulse {
+    0%,
+    100% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.05);
+    }
+  }
+  
+  .search-input:focus {
+    animation: inputPulse 0.5s ease;
+  } 
+  
+  .search-container {
+    --timing: 0.3s;
+    --width-of-input: 230px;
+    --height-of-input: 40px;
+    --border-height: 2px;
+    --border-color: #2f2ee9;
+    --border-radius: 30px;
+    --after-border-radius: 1px;
+    position: relative;
+    width: var(--width-of-input);
+    height: var(--height-of-input);
+    display: flex;
+    align-items: center;
+    padding-inline: 0.8em;
+    border-radius: var(--border-radius);
+    transition: border-radius 0.5s ease;
+    background: transparent; 
+    box-shadow: none; /* حذف سایه اضافی */
+  }
+  
+  /* وقتی در حالت focus هست */
+  .search-input:focus {
+    border: 2px solid #4caf50; /* مرز سبز */
+    background: transparent;
+    box-shadow: none; /* حذف سایه */
+  }
+  
+  /* برای تغییر فونت */
+  @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+  
+  /* آیتم‌های dropdown */
+  .custom-dropdown div {
+    width: 230px;
+    padding: 10px 15px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500;
+    color: #555;
+    border-radius: 8px; /* اضافه کردن گوشه‌های گرد به آیتم‌ها */
+  }
+  
+  /* هاور برای تغییر طول و اضافه کردن سایه */
+  .custom-dropdown div:hover {
+    background-color: #c2f0c2a5;
+    text-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    font-weight: 700;
+    transform: scale(1.1); /* بزرگ‌تر شدن طول آیتم */
+    box-shadow: 5px 0 15px 0 rgba(0, 255, 0, 0.3), -5px 0 15px 0 rgba(255, 255, 255, 0.5); /* سایه سبز به سفید */
+  }
+
+  .cart {
+    outline: 0 !important;
+    border: 0 !important;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #000000;
+    transition: all ease-in-out 0.1s;
+    cursor: pointer;
+  }
+  
+  .cart:hover {
+    transform: translateY(-3px);
+  }
+  
+  .cart-icon {
+    font-size: 25px;
+  }
+/* Topbar|| */

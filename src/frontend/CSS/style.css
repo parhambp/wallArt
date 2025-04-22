@@ -12,20 +12,20 @@ body {
 }
 
 .logo {
-    margin-right: 10px; /* فاصله از سمت راست */
+    margin-right: 10px; 
 }
 
 .logo img {
-    width: 120px; /* عرض تصویر */
-    height: 120px; /* ارتفاع تصویر */
+    width: 120px; 
+    height: 120px; 
     cursor: pointer;
-    border-radius: 50%; /* گرد کردن تصویر */
+    border-radius: 50%; 
 }
 
 .search-wrapper {
-    flex-grow: 1; /* جعبه جستجو فضای باقی‌مانده را پر کند */
+    flex-grow: 1;
     display: flex;
-    justify-content: center; /* قرار دادن جعبه جستجو در مرکز */
+    justify-content: center; 
 }
 
 .search-container {
@@ -64,7 +64,7 @@ body {
     transition: box-shadow 0.3s ease, background 0.3s ease, color 0.3s ease,
       border-color 0.3s ease, transform 0.3s ease;
     transform-style: preserve-3d;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1), 0 0 5px rgba(0, 0, 0, 0.2) inset; /* Improved box-shadow for a realistic feel */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1), 0 0 5px rgba(0, 0, 0, 0.2) inset; 
   }
   
   .search-input:focus,
@@ -72,7 +72,7 @@ body {
     border-color: #4caf50;
     background: linear-gradient(to right, #c2f0c2, #f0f0f0);
     transform: rotateX(20deg);
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1), 0 0 10px rgba(0, 0, 0, 0.2) inset; /* Improved box-shadow on focus */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1), 0 0 10px rgba(0, 0, 0, 0.2) inset; 
   }
   
   .search-input:focus + .label,
@@ -84,7 +84,7 @@ body {
   }
   
   .search-input:hover {
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1), 0 0 10px rgba(0, 0, 0, 0.2) inset; /* Improved box-shadow on hover */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1), 0 0 10px rgba(0, 0, 0, 0.2) inset; 
     background: linear-gradient(to right, #e6e6e6, #f9f9f9);
     border-color: #999;
   }
@@ -178,20 +178,18 @@ body {
     border-radius: var(--border-radius);
     transition: border-radius 0.5s ease;
     background: transparent; 
-    box-shadow: none; /* حذف سایه اضافی */
+    box-shadow: none; 
   }
   
-  /* وقتی در حالت focus هست */
+
   .search-input:focus {
-    border: 2px solid #4caf50; /* مرز سبز */
+    border: 2px solid #4caf50; 
     background: transparent;
-    box-shadow: none; /* حذف سایه */
+    box-shadow: none; 
   }
   
-  /* برای تغییر فونت */
   @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
   
-  /* آیتم‌های dropdown */
   .custom-dropdown div {
     width: 230px;
     padding: 10px 15px;
@@ -200,15 +198,15 @@ body {
     font-family: 'Roboto', sans-serif;
     font-weight: 500;
     color: #555;
-    border-radius: 8px; /* اضافه کردن گوشه‌های گرد به آیتم‌ها */
+    border-radius: 8px; 
   }
   
-  /* هاور برای تغییر طول و اضافه کردن سایه */
+
   .custom-dropdown div:hover {
     background-color: #c2f0c2a5;
     text-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
     font-weight: 700;
-    transform: scale(1.1); /* بزرگ‌تر شدن طول آیتم */
+    transform: scale(1.1); 
     box-shadow: 5px 0 15px 0 rgba(0, 255, 0, 0.3), -5px 0 15px 0 rgba(255, 255, 255, 0.5); /* سایه سبز به سفید */
   }
 
